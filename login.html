@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FIT HOME WELL</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .form-container {
+            min-height: calc(100vh - 128px); /* Full height minus header and footer approx */
+        }
+        .auth-form-card {
+            background-color: white;
+            padding: 2.5rem; /* p-10 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-xl */
+            width: 100%;
+            max-width: 28rem; /* max-w-md */
+        }
+         .form-input {
+            @apply w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm;
+        }
+        .tab-button {
+            @apply px-6 py-3 font-semibold text-gray-600 border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500 focus:outline-none;
+        }
+        .tab-button.active {
+            @apply text-blue-600 border-blue-500;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header/Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">FIT HOME WELL</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="index.html" class="text-gray-600 hover:text-blue-500">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-blue-500">About Us</a>
+                <a href="courses.html" class="text-gray-600 hover:text-blue-500">Courses</a>
+                <a href="donate.html" class="text-gray-600 hover:text-blue-500">Donate</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-500">Contact</a>
+                <a href="student_dashboard.html" class="text-gray-600 hover:text-blue-500">Student Area</a>
+                <!-- No login button on login page itself -->
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Home</a>
+            <a href="about.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">About Us</a>
+            <a href="courses.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Courses</a>
+            <a href="donate.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Donate</a>
+            <a href="contact.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Contact</a>
+            <a href="student_dashboard.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Student Area</a>
+        </div>
+    </header>
+
+    <!-- Main Content for Login/Register Page -->
+    <main class="form-container flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="auth-form-card">
+            <!-- Tab Navigation -->
+            <div class="mb-8 border-b border-gray-200">
+                <nav class="-mb-px flex justify-center space-x-2 sm:space-x-4" aria-label="Tabs">
+                    <button id="login-tab-button" class="tab-button active" data-target="login-form-section">Login</button>
+                    <button id="register-tab-button" class="tab-button" data-target="register-form-section">Register</button>
+                </nav>
+            </div>
+
+            <!-- Login Form Section -->
+            <div id="login-form-section">
+                <h2 class="text-center text-3xl font-extrabold text-gray-900 mb-2">Sign in to your account</h2>
+                <p class="text-center text-sm text-gray-600 mb-6">
+                    Or <a href="#register" id="switch-to-register-link-from-login" class="font-medium text-blue-600 hover:text-blue-500">create a new account</a>
+                </p>
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="login-email" class="sr-only">Email address</label>
+                        <input id="login-email" name="email" type="email" autocomplete="email" required class="form-input" placeholder="Email address">
+                        <p class="mt-1 text-xs text-red-500 hidden" id="login-email-error">Please enter a valid email.</p>
+                    </div>
+                    <div>
+                        <label for="login-password" class="sr-only">Password</label>
+                        <input id="login-password" name="password" type="password" autocomplete="current-password" required class="form-input" placeholder="Password">
+                        <p class="mt-1 text-xs text-red-500 hidden" id="login-password-error">Password is required.</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="remember-me" class="ml-2 block text-sm text-gray-900">Remember me</label>
+                        </div>
+                        <div class="text-sm">
+                            <a href="#" class="font-medium text-blue-600 hover:text-blue-500">Forgot your password?</a>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                            Sign In
+                        </button>
+                    </div>
+                    <p id="login-form-message" class="mt-2 text-sm text-center text-red-500"></p>
+                </form>
+            </div>
+
+            <!-- Register Form Section (Initially Hidden) -->
+            <div id="register-form-section" class="hidden">
+                <h2 class="text-center text-3xl font-extrabold text-gray-900 mb-2">Create a new account</h2>
+                 <p class="text-center text-sm text-gray-600 mb-6">
+                    Or <a href="#login" id="switch-to-login-link-from-register" class="font-medium text-blue-600 hover:text-blue-500">sign in to your existing account</a>
+                </p>
+                <form id="register-form" class="space-y-6">
+                    <div>
+                        <label for="register-fullname" class="sr-only">Full Name</label>
+                        <input id="register-fullname" name="fullname" type="text" autocomplete="name" required class="form-input" placeholder="Full Name">
+                        <p class="mt-1 text-xs text-red-500 hidden" id="register-fullname-error">Full name is required.</p>
+                    </div>
+                    <div>
+                        <label for="register-email" class="sr-only">Email address</label>
+                        <input id="register-email" name="email" type="email" autocomplete="email" required class="form-input" placeholder="Email address">
+                        <p class="mt-1 text-xs text-red-500 hidden" id="register-email-error">Please enter a valid email.</p>
+                    </div>
+                    <div>
+                        <label for="register-password" class="sr-only">Password</label>
+                        <input id="register-password" name="password" type="password" autocomplete="new-password" required class="form-input" placeholder="Password (min. 8 characters)">
+                        <p class="mt-1 text-xs text-red-500 hidden" id="register-password-error">Password must be at least 8 characters.</p>
+                    </div>
+                     <div>
+                        <label for="register-confirm-password" class="sr-only">Confirm Password</label>
+                        <input id="register-confirm-password" name="confirm-password" type="password" autocomplete="new-password" required class="form-input" placeholder="Confirm Password">
+                        <p class="mt-1 text-xs text-red-500 hidden" id="register-confirm-password-error">Passwords do not match.</p>
+                    </div>
+                    <div>
+                        <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out">
+                            Create Account
+                        </button>
+                    </div>
+                    <p id="register-form-message" class="mt-2 text-sm text-center text-red-500"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Minimal footer or no footer for auth pages is common -->
+     <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2024 FIT HOME WELL. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginTabButton = document.getElementById('login-tab-button');
+            const registerTabButton = document.getElementById('register-tab-button');
+            const loginFormSection = document.getElementById('login-form-section');
+            const registerFormSection = document.getElementById('register-form-section');
+
+            const switchToRegisterLinkFromLogin = document.getElementById('switch-to-register-link-from-login');
+            const switchToLoginLinkFromRegister = document.getElementById('switch-to-login-link-from-register');
+
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const loginFormMessage = document.getElementById('login-form-message');
+            const registerFormMessage = document.getElementById('register-form-message');
+
+            function showLoginForm() {
+                loginFormSection.classList.remove('hidden');
+                registerFormSection.classList.add('hidden');
+                loginTabButton.classList.add('active');
+                registerTabButton.classList.remove('active');
+                window.location.hash = 'login';
+            }
+
+            function showRegisterForm() {
+                loginFormSection.classList.add('hidden');
+                registerFormSection.classList.remove('hidden');
+                loginTabButton.classList.remove('active');
+                registerTabButton.classList.add('active');
+                window.location.hash = 'register';
+            }
+
+            loginTabButton.addEventListener('click', showLoginForm);
+            registerTabButton.addEventListener('click', showRegisterForm);
+            switchToRegisterLinkFromLogin.addEventListener('click', (e) => { e.preventDefault(); showRegisterForm(); });
+            switchToLoginLinkFromRegister.addEventListener('click', (e) => { e.preventDefault(); showLoginForm(); });
+
+            // Handle initial tab based on URL hash
+            if (window.location.hash === '#register') {
+                showRegisterForm();
+            } else {
+                showLoginForm(); // Default to login
+            }
+
+            // Mock form submissions (no real validation logic, just placeholders for error messages)
+            if (loginForm) {
+                loginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('login-email').value;
+                    // Clear previous errors
+                    document.getElementById('login-email-error').classList.add('hidden');
+                    document.getElementById('login-password-error').classList.add('hidden');
+                    loginFormMessage.textContent = '';
+
+                    if (!email) {
+                         document.getElementById('login-email-error').classList.remove('hidden');
+                         document.getElementById('login-email-error').textContent = 'Email is required.';
+                         return;
+                    }
+                    // Simple mock behavior
+                    loginFormMessage.textContent = 'Attempting login... (mock)';
+                    setTimeout(() => {
+                         loginFormMessage.textContent = 'Login failed: Invalid credentials (mock).';
+                    }, 1500);
+                });
+            }
+
+            if (registerForm) {
+                registerForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                     // Clear previous errors
+                    document.getElementById('register-fullname-error').classList.add('hidden');
+                    document.getElementById('register-email-error').classList.add('hidden');
+                    document.getElementById('register-password-error').classList.add('hidden');
+                    document.getElementById('register-confirm-password-error').classList.add('hidden');
+                    registerFormMessage.textContent = '';
+
+                    const password = document.getElementById('register-password').value;
+                    const confirmPassword = document.getElementById('register-confirm-password').value;
+
+                    if (password.length < 8) {
+                        document.getElementById('register-password-error').classList.remove('hidden');
+                        document.getElementById('register-password-error').textContent = 'Password must be at least 8 characters.';
+                        return;
+                    }
+                    if (password !== confirmPassword) {
+                        document.getElementById('register-confirm-password-error').classList.remove('hidden');
+                         document.getElementById('register-confirm-password-error').textContent = 'Passwords do not match.';
+                        return;
+                    }
+
+                    registerFormMessage.textContent = 'Creating account... (mock)';
+                     setTimeout(() => {
+                         registerFormMessage.classList.remove('text-red-500');
+                         registerFormMessage.classList.add('text-green-600');
+                         registerFormMessage.textContent = 'Account created successfully! Please login. (mock)';
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

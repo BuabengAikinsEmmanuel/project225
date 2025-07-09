@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT HOME WELL - Empowering Skills for the Future</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header/Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">FIT HOME WELL</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="index.html" class="text-gray-600 hover:text-blue-500">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-blue-500">About Us</a>
+                <a href="courses.html" class="text-gray-600 hover:text-blue-500">Courses</a>
+                <a href="donate.html" class="text-gray-600 hover:text-blue-500">Donate</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-500">Contact</a>
+                <a href="student_dashboard.html" class="text-gray-600 hover:text-blue-500">Student Area</a>
+                <a href="login.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Login</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Home</a>
+            <a href="about.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">About Us</a>
+            <a href="courses.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Courses</a>
+            <a href="donate.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Donate</a>
+            <a href="contact.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Contact</a>
+            <a href="student_dashboard.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Student Area</a>
+            <a href="login.html" class="block px-4 py-2 text-sm text-white bg-blue-500 hover:bg-blue-600">Login</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-cover bg-center h-screen" style="background-image: url('assets/images/hero-placeholder.jpg');">
+            <div class="container mx-auto px-6 h-full flex flex-col justify-center items-center text-center text-white bg-black bg-opacity-50">
+                <h1 class="text-5xl font-bold mb-4">Empowering Skills for the Future</h1>
+                <p class="text-xl mb-8">Join FIT HOME WELL and transform your career with our digital training programs.</p>
+                <div class="space-x-4">
+                    <a href="donate.html" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-md text-lg transition duration-300">Donate</a>
+                    <a href="courses.html" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-md text-lg transition duration-300">Join a Course</a>
+                    <a href="contact.html" class="bg-gray-700 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-md text-lg transition duration-300">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision/Mission Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Vision & Mission</h2>
+                <p class="text-lg text-gray-600 mb-4 max-w-2xl mx-auto">
+                    At FIT HOME WELL, our vision is to create a world where everyone has access to quality digital education and the skills to thrive in the modern economy.
+                </p>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our mission is to empower individuals through comprehensive training in programming, crypto trading, design, and other emerging technologies, fostering innovation and creating opportunities for all.
+                </p>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Success Stories</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-600 mb-4">"FIT HOME WELL changed my life. The programming course was fantastic, and I landed a great job afterwards!"</p>
+                        <p class="font-semibold text-blue-500">- Jane Doe, Web Developer</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-600 mb-4">"The crypto trading course provided me with valuable insights and strategies. Highly recommended!"</p>
+                        <p class="font-semibold text-blue-500">- John Smith, Crypto Trader</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-600 mb-4">"I learned so much in the design course. The instructors were knowledgeable and supportive."</p>
+                        <p class="font-semibold text-blue-500">- Alice Brown, UI/UX Designer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">FIT HOME WELL</h3>
+                    <p class="text-gray-400">Empowering individuals with digital skills for a brighter future. Join us in making a difference.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-blue-400 transition duration-300">About Us</a></li>
+                        <li><a href="courses.html" class="hover:text-blue-400 transition duration-300">Courses</a></li>
+                        <li><a href="donate.html" class="hover:text-blue-400 transition duration-300">Donate</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-400 transition duration-300">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Info</h3>
+                    <p class="text-gray-400 mb-2">123 Digital Avenue, Tech City</p>
+                    <p class="text-gray-400 mb-2">Email: info@fithomewell.org</p>
+                    <p class="text-gray-400">Phone: (123) 456-7890</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><img src="assets/images/facebook-icon.png" alt="Facebook" class="w-6 h-6"></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><img src="assets/images/twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><img src="assets/images/linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-500">
+                <p>&copy; 2024 FIT HOME WELL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

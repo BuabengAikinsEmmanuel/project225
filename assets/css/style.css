@@ -1,0 +1,49 @@
+/* Custom styles can be added here if Tailwind's utility classes are not sufficient */
+body {
+    font-family: 'Nunito', sans-serif; /* Example: Using a Google Font */
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Example of a custom component style if needed */
+.custom-btn {
+    @apply py-2 px-4 rounded-md font-semibold transition duration-300;
+}
+.custom-btn-blue {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+/* Adding a bit of softness to shadows */
+.shadow-soft {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+}
+
+/* Custom scrollbar (optional, for aesthetics - webkit browsers) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Ensure hero section background image covers well and is not repeated */
+.hero-bg-img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Basic hover effect for cards */
+.card-hover-effect {
+    @apply transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl;
+}

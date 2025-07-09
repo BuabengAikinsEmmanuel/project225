@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses - FIT HOME WELL</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header/Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">FIT HOME WELL</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="index.html" class="text-gray-600 hover:text-blue-500">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-blue-500">About Us</a>
+                <a href="courses.html" class="text-gray-600 hover:text-blue-500">Courses</a>
+                <a href="donate.html" class="text-gray-600 hover:text-blue-500">Donate</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-500">Contact</a>
+                <a href="student_dashboard.html" class="text-gray-600 hover:text-blue-500">Student Area</a>
+                <a href="login.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Login</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Home</a>
+            <a href="about.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">About Us</a>
+            <a href="courses.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Courses</a>
+            <a href="donate.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Donate</a>
+            <a href="contact.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Contact</a>
+            <a href="student_dashboard.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50">Student Area</a>
+            <a href="login.html" class="block px-4 py-2 text-sm text-white bg-blue-500 hover:bg-blue-600">Login</a>
+        </div>
+    </header>
+
+    <!-- Main Content for Courses Page -->
+    <main>
+        <!-- Page Header Section -->
+        <section class="bg-green-600 text-white py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold">Explore Our Courses</h1>
+                <p class="text-lg mt-2">Find the perfect course to kickstart or advance your digital career.</p>
+            </div>
+        </section>
+
+        <!-- Course Filtering/Search Bar Section -->
+        <section class="py-8 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="relative w-full md:w-1/2 lg:w-1/3">
+                        <input
+                            type="text"
+                            id="course-search"
+                            placeholder="Search courses (e.g., Programming, Design)"
+                            class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm"
+                        >
+                        <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="relative w-full md:w-auto">
+                        <select id="course-category-filter" class="w-full md:w-auto px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm appearance-none bg-white pr-8">
+                            <option value="">All Categories</option>
+                            <option value="programming">Programming</option>
+                            <option value="design">Design</option>
+                            <option value="crypto">Crypto Trading</option>
+                            <option value="marketing">Digital Marketing</option>
+                        </select>
+                         <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Grid Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div id="courses-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Course Card 1: Programming -->
+                    <div class="bg-white rounded-lg shadow-soft overflow-hidden card-hover-effect flex flex-col" data-category="programming" data-title="Web Development Bootcamp">
+                        <img src="assets/images/course-placeholder.png" alt="Web Development Course" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Web Development Bootcamp</h3>
+                            <p class="text-gray-600 text-sm mb-1"><span class="font-semibold">Duration:</span> 12 Weeks</p>
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">Learn full-stack web development, including HTML, CSS, JavaScript, Node.js, and React. Build real-world projects.</p>
+                            <a href="#" class="mt-auto w-full text-center bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Enroll Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 2: Design -->
+                    <div class="bg-white rounded-lg shadow-soft overflow-hidden card-hover-effect flex flex-col" data-category="design" data-title="UI/UX Design Fundamentals">
+                        <img src="assets/images/course-placeholder.png" alt="UI/UX Design Course" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">UI/UX Design Fundamentals</h3>
+                            <p class="text-gray-600 text-sm mb-1"><span class="font-semibold">Duration:</span> 8 Weeks</p>
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">Master the principles of user interface and user experience design. Create wireframes, prototypes, and stunning visuals.</p>
+                            <a href="#" class="mt-auto w-full text-center bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Enroll Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 3: Crypto Trading -->
+                    <div class="bg-white rounded-lg shadow-soft overflow-hidden card-hover-effect flex flex-col" data-category="crypto" data-title="Crypto Trading Masterclass">
+                        <img src="assets/images/course-placeholder.png" alt="Crypto Trading Course" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Crypto Trading Masterclass</h3>
+                            <p class="text-gray-600 text-sm mb-1"><span class="font-semibold">Duration:</span> 6 Weeks</p>
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">Understand blockchain technology, analyze cryptocurrency markets, and learn effective trading strategies.</p>
+                            <a href="#" class="mt-auto w-full text-center bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Enroll Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 4: Programming -->
+                    <div class="bg-white rounded-lg shadow-soft overflow-hidden card-hover-effect flex flex-col" data-category="programming" data-title="Python for Data Science">
+                        <img src="assets/images/course-placeholder.png" alt="Python Course" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Python for Data Science</h3>
+                            <p class="text-gray-600 text-sm mb-1"><span class="font-semibold">Duration:</span> 10 Weeks</p>
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">Dive into data analysis, visualization, and machine learning with Python and popular libraries like Pandas and Scikit-learn.</p>
+                            <a href="#" class="mt-auto w-full text-center bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Enroll Now</a>
+                        </div>
+                    </div>
+                     <!-- Course Card 5: Digital Marketing -->
+                    <div class="bg-white rounded-lg shadow-soft overflow-hidden card-hover-effect flex flex-col" data-category="marketing" data-title="Digital Marketing Essentials">
+                        <img src="assets/images/course-placeholder.png" alt="Digital Marketing Course" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Digital Marketing Essentials</h3>
+                            <p class="text-gray-600 text-sm mb-1"><span class="font-semibold">Duration:</span> 8 Weeks</p>
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">Learn SEO, content marketing, social media strategy, and email marketing to boost online presence.</p>
+                            <a href="#" class="mt-auto w-full text-center bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Enroll Now</a>
+                        </div>
+                    </div>
+                     <!-- Course Card 6: Design -->
+                    <div class="bg-white rounded-lg shadow-soft overflow-hidden card-hover-effect flex flex-col" data-category="design" data-title="Graphic Design with Adobe CC">
+                        <img src="assets/images/course-placeholder.png" alt="Graphic Design Course" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Graphic Design with Adobe CC</h3>
+                            <p class="text-gray-600 text-sm mb-1"><span class="font-semibold">Duration:</span> 10 Weeks</p>
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">Explore Photoshop, Illustrator, and InDesign to create professional graphics for print and web.</p>
+                            <a href="#" class="mt-auto w-full text-center bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <p id="no-courses-message" class="text-center text-gray-600 text-xl mt-8 hidden">No courses match your criteria.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">FIT HOME WELL</h3>
+                    <p class="text-gray-400">Empowering individuals with digital skills for a brighter future. Join us in making a difference.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-blue-400 transition duration-300">About Us</a></li>
+                        <li><a href="courses.html" class="hover:text-blue-400 transition duration-300">Courses</a></li>
+                        <li><a href="donate.html" class="hover:text-blue-400 transition duration-300">Donate</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-400 transition duration-300">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Info</h3>
+                    <p class="text-gray-400 mb-2">123 Digital Avenue, Tech City</p>
+                    <p class="text-gray-400 mb-2">Email: info@fithomewell.org</p>
+                    <p class="text-gray-400">Phone: (123) 456-7890</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><img src="assets/images/facebook-icon.png" alt="Facebook" class="w-6 h-6"></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><img src="assets/images/twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><img src="assets/images/linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-500">
+                <p>&copy; 2024 FIT HOME WELL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Course filtering logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('course-search');
+            const categoryFilter = document.getElementById('course-category-filter');
+            const coursesGrid = document.getElementById('courses-grid');
+            const courseCards = Array.from(coursesGrid.children);
+            const noCoursesMessage = document.getElementById('no-courses-message');
+
+            function filterCourses() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+                let visibleCourses = 0;
+
+                courseCards.forEach(card => {
+                    const title = card.dataset.title.toLowerCase();
+                    const category = card.dataset.category;
+
+                    const matchesSearch = title.includes(searchTerm);
+                    const matchesCategory = selectedCategory === "" || category === selectedCategory;
+
+                    if (matchesSearch && matchesCategory) {
+                        card.style.display = 'flex'; // Show card (flex to maintain layout)
+                        visibleCourses++;
+                    } else {
+                        card.style.display = 'none'; // Hide card
+                    }
+                });
+                 noCoursesMessage.style.display = visibleCourses === 0 ? 'block' : 'none';
+            }
+
+            searchInput.addEventListener('input', filterCourses);
+            categoryFilter.addEventListener('change', filterCourses);
+
+            // Initial filter call in case of pre-filled values (not typical for this setup)
+            // filterCourses();
+        });
+    </script>
+</body>
+</html>
