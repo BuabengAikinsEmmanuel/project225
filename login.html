@@ -14,12 +14,23 @@
             background-color: white;
             padding: 2.5rem; /* p-10 */
             border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-xl */
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* shadow-2xl */
             width: 100%;
             max-width: 28rem; /* max-w-md */
         }
          .form-input {
-            @apply w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm;
+            @apply w-full pl-10 pr-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm; /* Added pl-10 for icon */
+        }
+        .input-with-icon {
+            position: relative;
+        }
+        .input-icon {
+            position: absolute;
+            left: 0.75rem; /* pl-3 */
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af; /* text-gray-400 */
+            pointer-events: none; /* So it doesn't interfere with input click */
         }
         .tab-button {
             @apply px-6 py-3 font-semibold text-gray-600 border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500 focus:outline-none;
@@ -29,9 +40,9 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="text-gray-800 bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600">
     <!-- Header/Navbar -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-blue-600">FIT HOME WELL</a>
             <div class="hidden md:flex space-x-4">
@@ -81,12 +92,18 @@
                     Or <a href="#register" id="switch-to-register-link-from-login" class="font-medium text-blue-600 hover:text-blue-500">create a new account</a>
                 </p>
                 <form id="login-form" class="space-y-6">
-                    <div>
+                    <div class="input-with-icon">
+                        <span class="input-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                        </span>
                         <label for="login-email" class="sr-only">Email address</label>
                         <input id="login-email" name="email" type="email" autocomplete="email" required class="form-input" placeholder="Email address">
                         <p class="mt-1 text-xs text-red-500 hidden" id="login-email-error">Please enter a valid email.</p>
                     </div>
-                    <div>
+                    <div class="input-with-icon">
+                         <span class="input-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                        </span>
                         <label for="login-password" class="sr-only">Password</label>
                         <input id="login-password" name="password" type="password" autocomplete="current-password" required class="form-input" placeholder="Password">
                         <p class="mt-1 text-xs text-red-500 hidden" id="login-password-error">Password is required.</p>
@@ -116,22 +133,34 @@
                     Or <a href="#login" id="switch-to-login-link-from-register" class="font-medium text-blue-600 hover:text-blue-500">sign in to your existing account</a>
                 </p>
                 <form id="register-form" class="space-y-6">
-                    <div>
+                    <div class="input-with-icon">
+                        <span class="input-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                        </span>
                         <label for="register-fullname" class="sr-only">Full Name</label>
                         <input id="register-fullname" name="fullname" type="text" autocomplete="name" required class="form-input" placeholder="Full Name">
                         <p class="mt-1 text-xs text-red-500 hidden" id="register-fullname-error">Full name is required.</p>
                     </div>
-                    <div>
+                    <div class="input-with-icon">
+                        <span class="input-icon">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                        </span>
                         <label for="register-email" class="sr-only">Email address</label>
                         <input id="register-email" name="email" type="email" autocomplete="email" required class="form-input" placeholder="Email address">
                         <p class="mt-1 text-xs text-red-500 hidden" id="register-email-error">Please enter a valid email.</p>
                     </div>
-                    <div>
+                    <div class="input-with-icon">
+                        <span class="input-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                        </span>
                         <label for="register-password" class="sr-only">Password</label>
                         <input id="register-password" name="password" type="password" autocomplete="new-password" required class="form-input" placeholder="Password (min. 8 characters)">
                         <p class="mt-1 text-xs text-red-500 hidden" id="register-password-error">Password must be at least 8 characters.</p>
                     </div>
-                     <div>
+                     <div class="input-with-icon">
+                        <span class="input-icon">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                        </span>
                         <label for="register-confirm-password" class="sr-only">Confirm Password</label>
                         <input id="register-confirm-password" name="confirm-password" type="password" autocomplete="new-password" required class="form-input" placeholder="Confirm Password">
                         <p class="mt-1 text-xs text-red-500 hidden" id="register-confirm-password-error">Passwords do not match.</p>
